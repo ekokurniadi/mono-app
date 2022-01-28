@@ -5,3 +5,18 @@
     <%end%>
 </ul>
 <h2><%=@title%></h2>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Description</td>
+    </tr>
+    <% @books.each do |book|%>
+    <tr>
+        <td><%=book.id%></td>
+        <td><%=book.title%></td>
+        <td><%=book.description%></td>
+    </tr>
+    <%end%>
+</table>
