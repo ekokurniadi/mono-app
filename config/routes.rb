@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   # create endpoint manually
 
   # create routing for books base on controller
-  
-  resources:books
+
+  # generate routing only for some methods
+  resources:books,only: [:index,:show] 
+
+  # resources:books,except :[:index,:show] => generate routing except for some methods on array except
+
 end
