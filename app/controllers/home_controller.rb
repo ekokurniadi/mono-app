@@ -7,7 +7,13 @@ class HomeController < ApplicationController
     end
 
     def hallo
-      
+      id = params[:id]
+      book = Book.find_by(id:id)
+      if book
+        @title = book.title
+      else
+        @title = 'Book not found'
+        end
     end
 
     end
