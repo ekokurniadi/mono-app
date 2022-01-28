@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+    
+    # layout 'home_layout' => jika ingin mengeset layout untuk seluruh method
     def index
         # instance variable using @
         @langs = ['ruby','php','java','go','c++']
@@ -14,6 +16,7 @@ class HomeController < ApplicationController
       else
         @title = 'Book not found'
         end
+    render layout: 'home_layout'
     end
 
     end
