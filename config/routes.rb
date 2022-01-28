@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/home', to: 'home#index'
   get '/hallo/:id', to: 'home#hallo'
+
+  # get '/books', to: 'books#index'
+  # get '/books/:id', to: 'books#show'
+  # get '/books/new', to: 'books#new'
+  # post '/books', to: 'books#create'
+  # put '/books/:id', to: 'books#update'
+  # delete '/books/:id', to: 'books#destroy'
+  # create endpoint manually
 end
