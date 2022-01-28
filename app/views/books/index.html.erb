@@ -1,11 +1,16 @@
 <table border="1">
     <tr>
+        <th>ID</th>
         <th>Title</th>
         <th>Page</th>
         <th>Description</th>
+        <th>Action</th>
     </tr>
     <% @books.each do |book| %>
         <tr>
+            <td>
+                <%= book.id %>
+            </td>
             <td>
                 <%= book.title %>
             </td>
@@ -14,6 +19,11 @@
             </td>
             <td>
                 <%= book.description %>
+            </td>
+            <td>
+                <a href="/books/<%= book.id %>">View</a>
+                <a href="/books/<%= book.id %>/edit">Edit</a>
+                <a href="/books/<%= book.id %>/delete">Delete</a>
             </td>
         </tr>
     <%end%>

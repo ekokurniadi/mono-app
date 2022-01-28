@@ -5,6 +5,7 @@ class BooksController < ApplicationController
     end
 #show =>GET
     def show
+      @book = Book.find(params[:id])
     end
 #new =>POST
     def new
@@ -16,7 +17,7 @@ class BooksController < ApplicationController
         book.save
         render plain: 'Berhasil menyimpan data buku'
     end
-    
+
     private
 
     def resource_params
