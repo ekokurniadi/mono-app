@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # create routing for books base on controller
 
   # generate routing only for some methods
-  resources:books,only: [:index,:show] 
+  resources:books
 
   # resources:books,except :[:index,:show] => generate routing except for some methods on array except
 
