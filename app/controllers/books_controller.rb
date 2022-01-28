@@ -18,18 +18,23 @@ class BooksController < ApplicationController
         render plain: 'Berhasil menyimpan data buku'
     end
 
+  #edit =>GET
+      def edit
+        @book = Book.find(params[:id])
+      end
+
     private
 
     def resource_params
         params.require(:book).permit(:title, :page, :description)
     end
-#edit =>GET
-    def edit
-    end
+
 #update => Patch/Put
     def update
     end
 #destroy => DELETE
     def destroy
+      book = Book.destroy
+      render :index
     end
 end
