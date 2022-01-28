@@ -13,4 +13,8 @@ Rails.application.routes.draw do
   # put '/books/:id', to: 'books#update'
   # delete '/books/:id', to: 'books#destroy'
   # create endpoint manually
+
+  # create routing for books base on controller
+  
+  resources:books
 end
