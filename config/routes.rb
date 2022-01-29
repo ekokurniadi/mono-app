@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   # generate routing only for some methods
   resources:books do
     get :active, on: :collection
+    patch :toggle, on: :member
   end
 
   # resources:books,except :[:index,:show] => generate routing except for some methods on array except

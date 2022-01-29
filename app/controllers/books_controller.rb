@@ -48,6 +48,13 @@ class BooksController < ApplicationController
       render 'index'
     end
 
+    def toggle
+      @book = Book.find(params[:id])
+      @book.status = !@book.status
+      @book.save
+      redirect_to books_path, notice: "Berhasil menonaktifkan buku"
+    end
+
     private
 
     def resource_params

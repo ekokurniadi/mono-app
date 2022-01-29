@@ -27,6 +27,7 @@
         <%= book.status %>
       </td>
       <td>
+        <%= link_to "non_active",toggle_book_path(book.id),data:{turbo_method: :patch, turbo_confirm: "Are you sure"} %>
         <%= link_to "show",book_path(book) %>
         <%= link_to "edit", edit_book_path(book) %>
         <%= link_to "delete",book_path(book.id),data:{turbo_method: :delete, turbo_confirm: "Are you sure"} %>
