@@ -21,26 +21,31 @@ class BooksController < ApplicationController
         redirect_to books_path, notice: "Berhasil menambah data buku"
       end
 
-      #edit =>GET
+#edit =>GET
     def edit
         @book = Book.find(params[:id])
     end
 
-      #update => Patch/Put
+#update => Patch/Put
     def update
       @book = Book.find(params[:id])
       @book.update(resource_params)
       render plain: 'Berhasil mengubah data buku'
     end
 
-     #destroy => DELETE
-     def destroy
+#destroy => DELETE
+    def destroy
       book = Book.find(params[:id])
      if book.destroy
       redirect_to books_path, notice: "Berhasil menghapus data buku"
       else
       redirect_to books_path, notice: "Gagal menghapus data buku"
      end
+    end
+
+    def active
+      @books = Book.where(status: 1)
+      render 'index'
     end
 
     private
