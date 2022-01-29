@@ -16,9 +16,12 @@ class BooksController < ApplicationController
 
 #create =>POST
     def create
-        book = Book.new(resource_params)
-        book.save
-        redirect_to books_path, notice: "Berhasil menambah data buku"
+        @book = Book.new(resource_params)
+        if @book.save
+          redirect_to books_path, notice: "Berhasil menambah data buku"
+        else
+          render :new
+        end
       end
 
 #edit =>GET

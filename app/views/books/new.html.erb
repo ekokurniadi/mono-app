@@ -1,3 +1,10 @@
+<%if @book.errors.any?%>
+  <div>
+    <% @book.errors.full_messages.each do |msg| %>
+     <div><%= msg %></div>
+    <% end %>
+  </div>
+<%end%>
 <%=form_for(@book) do |f|%>
   <div>
     <%=f.label :title%>
@@ -9,7 +16,7 @@
   </div>
   <div>
     <%=f.label :description%>
-    <%=f.text_area :description%>
+    <%=f.rich_text_area :description%>
   </div>
   <div>
     <%=f.submit 'data-turbo': false%>
